@@ -2,6 +2,21 @@ import streamlit as st
 import pickle
 import pandas as pd
 import requests
+import os
+import gdown
+MOVIE_DICT_FILE = "movie_dict.pkl"
+MOVIE_DICT_URL = "https://drive.google.com/file/d/1kfvUr8PtI15YORwlHYUFAWF7WDr-oUne/view?usp=sharing"
+
+if not os.path.exists(MOVIE_DICT_FILE):
+    gdown.download(MOVIE_DICT_URL, MOVIE_DICT_FILE, quiet=False)
+
+
+PKL_FILE = "similarity.pkl"
+GDRIVE_URL = "https://drive.google.com/file/d/1ePOkhHZfZj_U2OPn60ZVWuEOK0XhcIKa/view?usp=sharing"
+
+if not os.path.exists(PKL_FILE):
+    gdown.download(GDRIVE_URL, PKL_FILE, quiet=False)
+
 
 API_KEY = "YOUR_NEW_API_KEY"   # ↓ this you must change
 
